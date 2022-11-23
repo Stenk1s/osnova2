@@ -26,7 +26,7 @@ class NewScreen : Fragment(R.layout.new_menu) {
         )
         (binding.siti.editText as? MaterialAutoCompleteTextView)?.setSimpleItems(items)
         binding.newnaosn.setOnClickListener {
-            //findNavController().navigate(R.id.action_newScreen_to_osnova2)
+            findNavController().navigate(R.id.action_newScreen_to_osnova)
 
         }
 

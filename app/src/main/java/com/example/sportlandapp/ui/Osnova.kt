@@ -12,15 +12,11 @@ import com.example.sportlandapp.viewmodel.UserViewModel
 class Osnova : Fragment(R.layout.activity_osnova) {
 
     private val userViewModel: UserViewModel by activityViewModels()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (userViewModel.email.value.toString().isEmpty())
             findNavController().navigate(R.id.action_osnova_to_registerScreen)
-        else
-            Toast.makeText(
-                requireContext(),
-                userViewModel.email.value.toString(),
-                Toast.LENGTH_SHORT
-            ).show()
+
     }
 }

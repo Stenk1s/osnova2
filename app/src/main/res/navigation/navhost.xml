@@ -14,7 +14,8 @@
             app:destination="@id/inputScreen" />
         <action
             android:id="@+id/action_registerScreen_to_forma"
-            app:destination="@id/forma" />
+            app:destination="@id/forma"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/forma"
@@ -22,7 +23,9 @@
         android:label="Forma" >
         <action
             android:id="@+id/action_forma_to_osnova"
-            app:destination="@id/osnova" />
+            app:destination="@id/osnova"
+            app:popUpTo="@id/registerScreen"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/osnova"
@@ -30,7 +33,9 @@
         android:label="Osnova" >
         <action
             android:id="@+id/action_osnova_to_registerScreen"
-            app:destination="@id/registerScreen" />
+            app:destination="@id/registerScreen"
+            app:popUpTo="@id/registerScreen"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_osnova_to_newScreen"
             app:destination="@id/newScreen" />
@@ -44,7 +49,9 @@
             app:destination="@id/registerScreen" />
         <action
             android:id="@+id/action_inputScreen_to_osnova"
-            app:destination="@id/osnova" />
+            app:destination="@id/osnova"
+            app:popUpTo="@id/osnova"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/mainScreen"
@@ -53,7 +60,13 @@
     <fragment
         android:id="@+id/newScreen"
         android:name="com.example.sportlandapp.ui.NewScreen"
-        android:label="NewScreen" />
+        android:label="NewScreen" >
+        <action
+            android:id="@+id/action_newScreen_to_osnova"
+            app:destination="@id/osnova"
+            app:popUpTo="@id/osnova"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/userScreen"
         android:name="com.example.sportlandapp.ui.UserScreen"

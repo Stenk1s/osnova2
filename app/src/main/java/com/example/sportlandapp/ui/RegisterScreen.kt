@@ -30,11 +30,16 @@ class RegisterScreen : Fragment(R.layout.fragment__register_sreen) {
         binding.loginLayout.typeface = Typeface.DEFAULT_BOLD
         binding.passwordLayout.typeface = Typeface.DEFAULT_BOLD
         binding.buttonPanel.setOnClickListener {
+            userViewModel.changeUserData(
+                name = binding.nameLayout.editText!!.text.toString(),
+                email = binding.loginLayout.editText!!.text.toString(),
+                password = binding.passwordLayout.editText!!.text.toString()
+            )
+
             findNavController().navigate(R.id.action_registerScreen_to_forma)
 
         }
         binding.button2.setOnClickListener {
-            userViewModel.email.value = binding.loginLayout.editText?.text.toString()
             findNavController().navigate(R.id.action_registerScreen_to_inputScreen)
         }
 
